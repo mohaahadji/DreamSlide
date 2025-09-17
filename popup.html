@@ -1,0 +1,48 @@
+<!-- extension/popup.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>DreamSlide </title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    :root { color-scheme: dark light; }
+    body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; margin: 0; padding: 14px; width: 340px; background: #0b0f1a; color: #e7ebf5; }
+    .title { font-weight: 800; font-size: 18px; display:flex; align-items:center; gap:8px; }
+    .dot { width:10px; height:10px; border-radius:99px; background:#7aa2ff; box-shadow:0 0 12px #7aa2ff; }
+    .muted { color:#9aa5bb; font-size:12px; margin-bottom:10px; }
+    .row { display:flex; gap:8px; flex-wrap: wrap; margin:10px 0; }
+    .btn { border:1px solid rgba(255,255,255,.12); background:#131a31; color:#e7ebf5; border-radius:12px; padding:10px 12px; font-weight:700; cursor:pointer; }
+    .btn.primary { background:#18213a; }
+    .chip { border:1px solid rgba(255,255,255,.12); background:#12182b; color:#e7ebf5; border-radius:999px; padding:6px 10px; font-size:12px; cursor:pointer; }
+    .chip.active { background:#1e263f; }
+    select { background:#12182b; color:#e7ebf5; border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:6px 10px; }
+    .log { background:#0f1528; border:1px solid rgba(255,255,255,.1); border-radius:12px; white-space:pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:11px; padding:8px; max-height:120px; overflow:auto; }
+  </style>
+</head>
+<body>
+  <div class="title"><i class="dot"></i> DreamSlide </div>
+  <div class="muted">Cinematic Story Mode powered by Chrome’s Prompt API</div>
+
+  <div class="row">
+    <button id="start" class="btn primary">Enter Story Mode</button>
+    <button id="clear" class="btn">Clear Cache</button>
+  </div>
+
+  <div class="muted">Tone</div>
+  <div class="row" id="tones"></div>
+
+  <div class="row" style="align-items:center">
+    <div class="muted" style="margin:0">Language</div>
+    <select id="lang">
+      <option value="en">English</option>
+      <option value="th">ไทย (Thai)</option>
+    </select>
+  </div>
+
+  <div class="muted">Status & Logs</div>
+  <div id="log" class="log"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

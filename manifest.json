@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "DreamSlide",
+    "version": "1.0.1",
+    "description": "Turn any page into a narrated, illustrated story — on-device with Chrome’s Prompt API.",
+    "action": { "default_popup": "popup.html", "default_title": "DreamSlide" },
+    "host_permissions": ["<all_urls>"],
+    "icons": { "128": "assets/logo-128.png" },
+    "permissions": ["activeTab", "scripting", "storage"],
+    "background": { "service_worker": "background.js" },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "css": ["overlay.css"],
+        "run_at": "document_idle"
+      }
+    ]
+  }
